@@ -1,0 +1,42 @@
+function startGame() {
+    isGameOver = false;
+    snake = [{ x: 10, y: 10 }];
+    // Mude de {x:0, y:0} para {x:1, y:0} para começar andando para a direita
+    velocity = { x: 1, y: 0 }; 
+    score = 0;
+    scoreElement.textContent = score;
+    gameOverScreen.classList.add('hidden');
+    gameOverScreen.classList.remove('flex');
+    
+    // Importante: garantir que o tileCount esteja calculado antes de colocar a comida
+    tileCount = Math.floor(canvas.width / gridSize);
+    placeFood();
+    
+    if (gameInterval) clearInterval(gameInterval);
+    gameInterval = setInterval(gameLoop, 1000 / 10);
+}
+function startGame() {
+    isGameOver = false;
+    snake = [{ x: 10, y: 10 }];
+    // Mude de {x:0, y:0} para {x:1, y:0} para começar andando para a direita
+    velocity = { x: 1, y: 0 }; 
+    score = 0;
+    scoreElement.textContent = score;
+    gameOverScreen.classList.add('hidden');
+    gameOverScreen.classList.remove('flex');
+    
+    // Importante: garantir que o tileCount esteja calculado antes de colocar a comida
+    tileCount = Math.floor(canvas.width / gridSize);
+    placeFood();
+    
+    if (gameInterval) clearInterval(gameInterval);
+    gameInterval = setInterval(gameLoop, 1000 / 10);
+}
+
+
+
+function moveSnake() {
+    if (velocity.x === 0 && velocity.y === 0) return; // Não move se estiver parado
+    
+    const head = { x: snake[0].x + velocity.x, y: snake[0].y + velocity.y };
+    // ... resto do código
