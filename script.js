@@ -34,7 +34,7 @@ function enviarMensagem() {
 
 function responder(texto) {
     const msg = texto.toLowerCase();
-    let resposta = "Hmm, não encontrei jogos exatamente com esse termo. Tente categorias como **RPG**, **FPS** ou **Terror**.";
+    let resposta = "Hmm, não encontrei jogos exatamente com esse termo. Tente categorias como **RPG**, **FPS**, **esporte**, **ação**,  **tiro**, **aventura**, **mundo aberto** ou **Terror**.";
 
     // Busca inteligente no Banco de Dados
     for (let categoria in BANCO_DE_JOGOS) {
