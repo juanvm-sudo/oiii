@@ -1,12 +1,23 @@
-.bot-msg { 
-    background: #e1f5fe; 
-    padding: 10px; 
-    border-radius: 12px; 
-    margin-bottom: 10px; 
-    line-height: 1.4; /* Melhora o espaçamento do texto */
+:root {
+    --primary: #6200ea;
+    --secondary: #03dac6;
+    --bg: #121212;
+    --chat-bg: #1e1e1e;
+    --text: #ffffff;
 }
 
-/* Estilo extra para destacar os nomes dos jogos */
-.bot-msg b, .bot-msg strong {
-    color: var(--secondary);
-}
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); display: flex; justify-content: center; padding: 20px; }
+
+#chat-container { width: 100%; max-width: 500px; background: var(--chat-bg); border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; height: 80vh; border: 1px solid #333; }
+
+#chat-header { background: var(--primary); padding: 15px; text-align: center; font-weight: bold; font-size: 1.2rem; }
+
+#mensagens { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+
+.msg { padding: 10px 15px; border-radius: 15px; max-width: 80%; margin-bottom: 5px; }
+.user-msg { background: var(--primary); align-self: flex-end; }
+.bot-msg { background: #333; align-self: flex-start; border-left: 4px solid var(--secondary); }
+
+#input-area { padding: 15px; display: flex; gap: 10px; background: #252525; }
+input { flex-grow: 1; padding: 10px; border-radius: 5px; border: none; background: #333; color: white; }
+button { padding: 10px 20px; border-radius: 5px; border: none; background: var(--secondary); color: black; font-weight: bold; cursor: pointer; }
