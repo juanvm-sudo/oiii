@@ -1,5 +1,6 @@
 // Banco de dados centralizado
 const BANCO_DE_JOGOS = {
+    "oi"; "Oii tudo bem, Tente enviar **rpg**, **fps**, **esporte**, **grátis**, **ação**,  **tiro**, **aventura**, **mundo aberto** ou **Terror**.",
     "ação": "God of War Ragnarök e Elden Ring",
     "aventura": "The Last of Us Part II e Zelda: Tears of the Kingdom",
     "tiro": "Call of Duty: Warzone, Valorant e Counter-Strike 2",
