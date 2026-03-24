@@ -54,19 +54,22 @@ function responder(texto) {
             break; 
         }
     }
-    for (let categoria in BANCO_DE_JOGOS) {
+
+
+
+    for (let categoria in BANCO_DE_RESPOSTAS_VARIAVEIS) {
         if (msg.includes(categoria)) {
-            resposta = ` ${BANCO_DE_RESPOSTAS_VARIAVEIS[categoria]}.`;
+            resposta = `**${categoria.toUpperCase()}**, ${BANCO_DE_RESPOSTAS_VARIAVEIS[categoria]}.`;
             break; 
         }
     }
 
-
-
-    adicionarMensagem(resposta, 'bot-msg');
+    
+   adicionarMensagem(resposta, 'bot-msg');
 }
 
-// Permitir enviar com a tecla Enter
+
+
 document.getElementById('usuario-input').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') enviarMensagem();
 });
