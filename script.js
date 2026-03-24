@@ -55,6 +55,7 @@ function responder(texto) {
         }
     }
 
+    adicionarMensagem(resposta, 'bot-msg');
 
 
     for (let categoria in BANCO_DE_RESPOSTAS_VARIAVEIS) {
@@ -64,10 +65,9 @@ function responder(texto) {
         }
     }
 
-    
-   adicionarMensagem(resposta, 'bot-msg');
-}
 
+  
+}
 
 
 document.getElementById('usuario-input').addEventListener('keypress', (e) => {
