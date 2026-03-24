@@ -1,6 +1,14 @@
 // Banco de dados centralizado
-const BANCO_DE_JOGOS = {
+const BAMCO_DE_RESPOSTAS_VARIAVEIS = {
     "oi": "Oii tudo bem, Tente enviar **rpg**, **fps**, **esporte**, **grátis**, **ação**,  **tiro**, **aventura**, **mundo aberto** ou **Terror**.",
+    "oi tudo bem,": "tudo!!! Aqui vai umas opções de perguntas, **rpg**, **fps**, **esporte**, **grátis**, **ação**,  **tiro**, **aventura**, **mundo aberto** ou **Terror**."
+
+
+
+
+
+};
+const BANCO_DE_JOGOS = {
     "ação": "God of War Ragnarök e Elden Ring",
     "aventura": "The Last of Us Part II e Zelda: Tears of the Kingdom",
     "tiro": "Call of Duty: Warzone, Valorant e Counter-Strike 2",
@@ -10,6 +18,9 @@ const BANCO_DE_JOGOS = {
     "esporte": "EA Sports FC 24 e NBA 2K24",
     "terror": "Resident Evil Village e Silent Hill 2 Remake",
     "grátis": "Fortnite, League of Legends e Genshin Impact"
+
+
+
 };
 
 function adicionarMensagem(texto, tipo) {
@@ -18,7 +29,7 @@ function adicionarMensagem(texto, tipo) {
     div.className = `msg ${tipo}`;
     div.innerHTML = texto;
     box.appendChild(div);
-    box.scrollTop = box.scrollHeight; // Auto-scroll para o fim
+    box.scrollTop = box.scrollHeight;
 }
 
 function enviarMensagem() {
@@ -28,8 +39,7 @@ function enviarMensagem() {
     if (texto !== "") {
         adicionarMensagem(texto, 'user-msg');
         input.value = "";
-        // Simula um pequeno atraso para parecer que a IA está "pensando"
-        setTimeout(() => responder(texto), 500);
+        setTimeout(() => responder(texto), 1000);
     }
 }
 
@@ -44,6 +54,14 @@ function responder(texto) {
             break; 
         }
     }
+    for (let categoria in BANCO_DE_JOGOS) {
+        if (msg.includes(categoria)) {
+            resposta = ` ${BANCO_DE_RESPOSTAS_VARIAVEIS[categoria]}.`;
+            break; 
+        }
+    }
+
+
 
     adicionarMensagem(resposta, 'bot-msg');
 }
